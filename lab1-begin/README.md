@@ -145,7 +145,7 @@ public void testFindOne() {
 ### Domaći zadatak
 
 1. Dopuniti servisni sloj (ActivityService) metodama:
-	- Activity findByName(String name) - treba da pronađe Activity objekat sa zadatim imenom
-	- List<Activity> save(List<Activity> activities) - treba da snimi sve zadate Activity objekte
+	- List<Activity> findByName(String name) - treba da pronađe Activity objekat sa zadatim imenom
+	- void save(List<Activity> activities) - treba da snimi sve zadate Activity objekte
 	- void remove(List<Long> ids) - treba da izbriše sve Activity objekte sa zadatim ID-evima
 2. Napisati testove za nove metode servisnog sloja
