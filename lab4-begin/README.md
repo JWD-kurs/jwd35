@@ -30,12 +30,14 @@ podataka bude perzistentna.
 * Izvršiti MySQL skriptu za pražnjenje baze podataka (`jwd` zameniti svojim nalogom):
 
 ```sql
+CREATE USER IF NOT EXISTS jwduser IDENTIFIED BY 'pass';
+
 DROP DATABASE IF EXISTS jwddb;
 CREATE DATABASE jwddb DEFAULT CHARACTER SET utf8;
 
 USE jwddb;
 
-GRANT ALL ON jwddb.* TO 'jwduser'@'%' IDENTIFIED BY 'pass';
+GRANT ALL ON jwddb.* TO 'jwduser'@'%';
 
 FLUSH PRIVILEGES;
 ```
