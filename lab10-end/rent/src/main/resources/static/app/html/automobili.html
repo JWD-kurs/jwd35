@@ -1,0 +1,89 @@
+<div ng-controller="automobiliCtrl">
+
+	<br />
+	<form>
+		<div class="form-group">
+			<label for="modelNA">Model</label> <input
+				ng-model="novAutomobil.model" type="text" class="form-control"
+				id="modelNA">
+		</div>
+		<div class="form-group">
+			<label for="registracijaNA">Registracija</label> <input
+				ng-model="novAutomobil.registracija" type="text" class="form-control"
+				id="registracijaNA">
+		</div>
+		<div class="form-group">
+			<label for="godisteNA">Godište</label> <input
+				ng-model="novAutomobil.godiste" type="text" class="form-control"
+				id="godisteNA">
+		</div>
+		<div class="form-group">
+			<label for="potrosnjaNA">Potrošnja</label> <input
+				ng-model="novAutomobil.potrosnja" type="text" class="form-control"
+				id="potrosnjaNA">
+		</div>
+		<div class="form-group">
+			<label for="kompanijaNA">Kompanija</label> <select
+				ng-model="novAutomobil.kompanijaId" class="form-control" id="kompanijaNA">
+				<option ng-repeat="k in kompanije" value="{{k.id}}">{{k.naziv}}</option>
+			</select>
+		</div>
+
+		<button ng-click="dodaj()" type="button" class="btn btn-primary">Dodaj</button>
+	</form>
+
+
+	<br />
+	<form>
+		<div class="form-group">
+			<label for="modelTA">Model</label> <input
+				ng-model="trazeniAutomobil.model" type="text" class="form-control"
+				id="modelTA">
+		</div>
+		<div class="form-group">
+			<label for="godisteTA">Godište</label> <input
+				ng-model="trazeniAutomobil.godiste" type="text" class="form-control"
+				id="godisteTA">
+		</div>
+		<div class="form-group">
+			<label for="mpTA">Maksimalna potrošnja</label> <input
+				ng-model="trazeniAutomobil.potrosnja" type="text" class="form-control"
+				id="mpTA">
+		</div>
+
+
+		<button ng-click="trazi()" type="button" class="btn btn-primary">Traži</button>
+	</form>
+
+	<br /> <br /> <br />
+	<div class="btn-group pull-right">
+		<button class="btn btn-primary" ng-click="nazad()" ng-disabled="pageNum == 0">Prethodna</button>
+		<button class="btn btn-primary" ng-click="napred()" ng-disabled="pageNum == totalPages - 1">Sledeća</button>
+	</div>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Model</th>
+				<th>Registracija</th>
+				<th>Godište</th>
+				<th>Potrošnja</th>
+				<th>Kompania</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="a in automobili">
+				<td>{{a.model}}</td>
+				<td>{{a.registracija}}</td>
+				<td>{{a.godiste}}</td>
+				<td>{{a.potrosnja}}</td>
+				<td>{{a.kompanijaNaziv}}</td>
+				<td>
+					<button ng-click="obrisi(a.id)" class="btn btn-danger">Obriši</button>
+					<button ng-click="izmeni(a.id)" class="btn btn-warning">Izmeni</button>
+					<button ng-disabled="a.iznajmljen" ng-click="iznajmi(a.id)" class="btn btn-primary">Iznajmi</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+</div>

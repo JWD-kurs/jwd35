@@ -1,0 +1,10 @@
+/target/
+.project
+.classpath
+/.settings/
+/bin/
+
+# Intellij
+.idea/
+*.iml
+*.iws

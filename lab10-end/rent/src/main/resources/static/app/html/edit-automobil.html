@@ -1,0 +1,31 @@
+<div ng-controller="editAutomobilCtrl">
+    <form>
+        <div class="form-group">
+			<label for="modelSA">Model</label> <input
+				ng-model="stariAutomobil.model" type="text" class="form-control"
+				id="modelSA">
+		</div>
+		<div class="form-group">
+			<label for="registracijaSA">Registracija</label> <input
+				ng-model="stariAutomobil.registracija" type="text" class="form-control"
+				id="registracijaSA">
+		</div>
+		<div class="form-group">
+			<label for="godisteSA">Godište</label> <input
+				ng-model="stariAutomobil.godiste" type="text" class="form-control"
+				id="godisteSA">
+		</div>
+		<div class="form-group">
+			<label for="potrosnjaSA">Potrošnja</label> <input
+				ng-model="stariAutomobil.potrosnja" type="text" class="form-control"
+				id="potrosnjaSA">
+		</div>
+		<div class="form-group">
+			<label for="kompanijaNA">Kompanija</label> <select
+				ng-model="stariAutomobil.kompanijaId" class="form-control" id="kompanijaNA">
+				<option ng-repeat="k in kompanije" value="{{k.id}}">{{k.naziv}}</option>
+			</select>
+		</div>
+        <button type="button" class="btn btn-primary" ng-click="izmeni()">Izmeni</button>
+    </form>
+</div>
